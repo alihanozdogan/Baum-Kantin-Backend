@@ -3,6 +3,7 @@ package baum.kantin.kantinmanager.model;
 import javax.persistence.*;
 import java.io.Serializable;
 @Entity
+@Table
 public class Product implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
