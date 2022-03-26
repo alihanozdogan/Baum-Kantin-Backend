@@ -9,5 +9,5 @@ public class KantinmanagerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(KantinmanagerApplication.class, args);
 	}
-	  
+
 }

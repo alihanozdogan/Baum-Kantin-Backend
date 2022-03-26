@@ -11,11 +11,12 @@ public class Product implements Serializable {
     private Long id;
     private String name;
     private Double price;
-    private Long Stock;
+    private Integer Stock;
     private String imageUrl;
+    @Column(nullable = false, updatable = false)
+    private String productCode;
 
-    public Product(Long id, String name, Double price, Long stock, String imageUrl, String productCode) {
-        this.id = id;
+    public Product(String name, Double price, Integer stock, String imageUrl, String productCode) {
         this.name = name;
         this.price = price;
         this.Stock = stock;
@@ -53,11 +54,11 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-    public Long getStock() {
+    public Integer getStock() {
         return Stock;
     }
 
-    public void setStock(Long stock) {
+    public void setStock(Integer stock) {
         Stock = stock;
     }
 
@@ -77,8 +78,7 @@ public class Product implements Serializable {
         this.productCode = productCode;
     }
 
-    @Column(nullable = false, updatable = false)
-    private String productCode;
+
 
     @Override
     public String toString() {

@@ -1,8 +1,8 @@
 package baum.kantin.kantinmanager.service;
 
-import baum.kantin.kantinmanager.exception.ProductNotFoundException;
+import baum.kantin.kantinmanager.exceptions.ProductNotFoundException;
 import baum.kantin.kantinmanager.model.Product;
-import baum.kantin.kantinmanager.repo.ProductRepo;
+import baum.kantin.kantinmanager.repo.productRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,11 +12,11 @@ import java.util.UUID;
 
 @Service
 @Transactional
-public class ProductService {
-    private final ProductRepo productRepo;
+public class productService {
+    public final productRepo productRepo;
 
     @Autowired
-    public ProductService(ProductRepo productRepo){
+    public productService(productRepo productRepo){
         this.productRepo = productRepo;
     }
     public Product addProduct(Product product){
@@ -27,13 +27,14 @@ public class ProductService {
         return productRepo.findAll();
     }
     public Product updateProduct(Product product){
-       return productRepo.save(product);
+        return productRepo.save(product);
     }
-    public void deleteProduct(Long id){
-        productRepo.deleteProductbyId(id);
+    public void deleteProduct(Long id) {
+        productRepo.deleteProductById(id);
     }
-    public Product findProductbyId(Long id){
-       return productRepo.findProductbyId(id).orElseThrow(() -> new ProductNotFoundException("Product by id "+ id + "not found"));
+    public Product findProductById(Long id) {
+        return productRepo.findProductById(id)
+                .orElseThrow(() -> new ProductNotFoundException("User by id " + id + " was not found"));
     }
 
 }
