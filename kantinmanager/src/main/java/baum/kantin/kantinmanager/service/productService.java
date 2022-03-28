@@ -34,7 +34,7 @@ public class productService {
     }
     public Product findProductById(Long id) {
         return productRepo.findProductById(id)
-                .orElseThrow(() -> new ProductNotFoundException("User by id " + id + " was not found"));
+                .orElseThrow(() -> new ProductNotFoundException("Product by id " + id + " was not found"));
     }
 
 }
