@@ -13,10 +13,7 @@ public class Product implements Serializable {
     private Double price;
     private Integer Stock;
     private String imageUrl;
-    /**private enum category{
-        DRINK,
-        SNACK,
-    }**/
+    private Long categoryId;
     @Column(nullable = false, updatable = false)
     private String productCode;
 

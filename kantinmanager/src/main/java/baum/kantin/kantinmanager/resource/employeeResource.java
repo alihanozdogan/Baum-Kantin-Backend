@@ -1,15 +1,15 @@
 package baum.kantin.kantinmanager.resource;
 
 import baum.kantin.kantinmanager.model.Employee;
-import baum.kantin.kantinmanager.model.Product;
 import baum.kantin.kantinmanager.service.employeeService;
-import baum.kantin.kantinmanager.service.productService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RestController
+@RequestMapping("/employee")
 public class employeeResource {
 
     private final employeeService employeeService;

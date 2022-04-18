@@ -12,18 +12,20 @@ public class Employee implements Serializable {
     private String name;
     private String roomNumber;
     private String email;
-    private String imageUrl;
+    private String password;
+    private Long isEmailVarified;
     private Long phoneNumber;
     @Column(nullable = false, updatable = false)
     private String employeeCode;
 
-    public Employee(String name, String roomNumber, String email, String imageUrl, Long phoneNumber, String employeeCode) {
+    public Employee(String name, String roomNumber, String email, Long phoneNumber, String employeeCode, String password, Long isEmailVarified) {
         this.name = name;
         this.roomNumber = roomNumber;
         this.email = email;
-        this.imageUrl = imageUrl;
         this.phoneNumber = phoneNumber;
         this.employeeCode = employeeCode;
+        this.password = password;
+        this.isEmailVarified = isEmailVarified;
     }
     public Employee(){
 
@@ -61,14 +63,6 @@ public class Employee implements Serializable {
         this.email = email;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
     public Long getPhoneNumber() {
         return phoneNumber;
     }
@@ -92,7 +86,6 @@ public class Employee implements Serializable {
                 ", name='" + name + '\'' +
                 ", roomNumber='" + roomNumber + '\'' +
                 ", email='" + email + '\'' +
-                ", imageUrl='" + imageUrl + '\'' +
                 ", phoneNumber=" + phoneNumber +
                 ", employeeCode='" + employeeCode + '\'' +
                 '}';

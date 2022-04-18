@@ -36,5 +36,5 @@ public class productService {
         return productRepo.findProductById(id)
                 .orElseThrow(() -> new ProductNotFoundException("Product by id " + id + " was not found"));
     }
-
+//TODO: view model
 }
